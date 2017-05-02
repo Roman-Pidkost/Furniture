@@ -21,7 +21,6 @@ public class Subcategory {
 
     private String name;
 
-    @JsonIgnore
     @ManyToOne
     private Category category;
 
