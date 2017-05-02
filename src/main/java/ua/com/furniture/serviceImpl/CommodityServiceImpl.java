@@ -3,6 +3,7 @@ package ua.com.furniture.serviceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.com.furniture.entity.Commodity;
+import ua.com.furniture.entity.Subcategory;
 import ua.com.furniture.repository.CommodityRepository;
 import ua.com.furniture.repository.SubcategoryRepository;
 import ua.com.furniture.service.CommodityService;
@@ -19,7 +20,11 @@ public class CommodityServiceImpl implements CommodityService {
     private SubcategoryRepository subcategoryRepository;
 
     public Commodity save(Commodity commodity) {
-        return commodityRepository.saveAndFlush(commodity);
+        Commodity currentCommodity = commodityRepository.saveAndFlush(commodity);
+        int subcategoryId = commodity.getSubcategory().getId();
+        Subcategory subcategory = subcategoryRepository.findOne(subcategoryId);
+        commodity.setSubcategory(subcategory);
+        return commodity;
     }
 
     public List<Commodity> findAll() {
