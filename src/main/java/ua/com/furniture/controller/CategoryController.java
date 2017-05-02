@@ -8,10 +8,10 @@ import ua.com.furniture.service.CategoryService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping(value = CategoryController.URL)
 public class CategoryController {
-
     static final String URL = "/api/category";
 
     @Autowired
@@ -32,9 +32,9 @@ public class CategoryController {
         return categoryService.save(category);
     }
 
-    @DeleteMapping
-    public void delete() {
-
+    @DeleteMapping("{id}")
+    public void delete(@PathVariable int id) {
+        categoryService.delete(id);
     }
 }
 
