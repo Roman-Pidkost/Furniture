@@ -1,5 +1,6 @@
 package ua.com.furniture.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,9 +15,11 @@ public class CommodityForOrder {
 
     private int quantity;
 
+    @JsonIgnore
     @ManyToOne
     private Commodity commodity;
 
+    @JsonIgnore
     @ManyToOne
     private Order order;
 }
