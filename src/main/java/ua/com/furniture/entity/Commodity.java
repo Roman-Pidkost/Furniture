@@ -1,6 +1,7 @@
 package ua.com.furniture.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -43,4 +44,8 @@ public class Commodity {
     private boolean promo;
 
     private boolean recent;
+
+    @Transient
+    @JsonProperty
+    private String imageFile;
 }
