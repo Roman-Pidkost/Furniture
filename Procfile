@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar *.jar
+web: java -Dserver.port=$PORT -jar ua.com.furniture-0.0.1-SNAPSHOT.jar
