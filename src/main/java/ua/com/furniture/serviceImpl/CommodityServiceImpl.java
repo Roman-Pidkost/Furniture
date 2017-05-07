@@ -60,8 +60,8 @@ public class CommodityServiceImpl implements CommodityService {
     }
 
     private void saveFile(MultipartFile file, int id) {
-//        File pathToFolder = new File(CommodityServiceImpl.PATH_TO_IMG);
-        File pathToFolder = new File(System.getProperty("user.home"));
+        File pathToFolder = new File(CommodityServiceImpl.PATH_TO_IMG);
+//        File pathToFolder = new File(System.getProperty("user.home"));
         createFolder(pathToFolder);
         Commodity commodity = commodityRepository.findOne(id);
         File pathToFile;
