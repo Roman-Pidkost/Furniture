@@ -23,6 +23,8 @@ public class Order {
 
     private boolean archive;
 
+    private String comments;
+
     @JsonProperty("goodsOrdered")
     @OneToMany(mappedBy = "order")
     private List<CommodityForOrder> commoditiesForOrder = new ArrayList<>();
