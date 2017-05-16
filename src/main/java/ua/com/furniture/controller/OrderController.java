@@ -7,6 +7,7 @@ import ua.com.furniture.service.OrderService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping(OrderController.URL)
 public class OrderController {
