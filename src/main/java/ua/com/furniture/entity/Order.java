@@ -25,6 +25,8 @@ public class Order {
 
     private String comments;
 
+    private boolean status;
+
     @JsonProperty("goodsOrdered")
     @OneToMany(mappedBy = "order")
     private List<CommodityForOrder> commoditiesForOrder = new ArrayList<>();
